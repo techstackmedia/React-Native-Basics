@@ -1,0 +1,50 @@
+React Native
+
+What is React Native?
+React.js + React Native = React Native Mobile Apps (for IOS and Android)
+React is typically used for web dev. React Dom for web development (React without ReactDOM is like platform agnostic). React just give tools for managing state for building virtual components tress, etc. ReactDOM translate the result that React produce to an actual platform like the browser.
+
+React Native = gives a collection of special React Components. The components are then compiled to native UI elements (for IOS and Android). It also exposes certain native API like using the device camera. So it connects React to specific platforms.
+
+In React Native, it is just the views, jsx that is compiled, not the JavaScript logic. That’s 
+
+React Native maps (and compiles) re-useable components to respective platform (native) equivalents.
+
+What about the Logic?
+The logic are not compiled but it is running on a JS thread that is hoisted by react native in the native app that was built
+
+const App =  props => {
+  return (
+		<View> 
+			<Text>Hello there!</Text>
+		</View>
+	) 
+};
+
+The code above will be compiled to real react native app code
+
+
+
+React Native
+Creating Expo CLI and React Native CLI
+1. Expo CLI (Command Line Interface) - Recommended (the CLI by default) - a third party service (free). You get a managed development workflow
+2. React Native CLI 
+
+npm install -g expo-cli
+expo init AwesomeProject
+
+File > Open Folder > …
+
+Expo-shared holds some internally used info. Asset folder for images. node_module holds third party packages
+
+For example you have an iPhone but want to preview the app on Android but don’t have an android device, the you might want to install a simulator (extra piece of software that runs on your local machine that simulate an iOS device or an android device)
+1. Search android studio - Download Android Studio and SDK tools - developer.android.studio/studio - on Mac (open the App Store - search Xcode (open)) - More Action - Virtual Device Manager (use device to build emulator) - create device - pixel x (the one with icon)- next - API32 (or the latest version) - Finish - click the play button to launch the emulator. Press a in terminal (to preview changes)
+2. For Xcode and MacOS - Xcode (top left of screen) - preference - locations - command line tool (select a version eg. Xcode 13.2.1)
+    1. Application - Xcode - Show Package Contents - Contents - Developer - Application - Simulator.app (iPhone 13 - to change it, you can click on it go to menu > file > open simulator > specify the device) > press I
+
+
+React Native does not use elements like h2, div because native devices doesn’t have DOM
+When writing CSS, you can't use CSS because native devices don't have DOM but you can style apply styles.
+Styling is either done by using inlines (passing object through props) and stylesheet objects (through props).
+Both written in JS - React Native team gives you a lot of JS properties which you can set an pass to those core elements that is similar to the css properties
+- The view makes it very easy to use styling in React Native to control where where which of the child element should be positioned
